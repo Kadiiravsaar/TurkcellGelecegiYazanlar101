@@ -1,0 +1,37 @@
+﻿@using static MyAspNetCoreApp.Web.Controllers.OrnekController
+@model List<Product>;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ornek Controller, Index</h1>
+
+
+
+@{
+    var name = ViewBag.name;
+    <p>@name</p>
+}
+
+<p>@name</p>
+
+<p>@ViewBag.name</p>
+
+<hr />
+
+<p>Yaş : @ViewData["Age"]</p>
+
+<p>Yaşlar</p>
+
+@foreach (var item in ViewData["Ages"] as List<int>)
+{
+    <p>@item</p>
+}
+
+<hr />
+
+
+@foreach (var item in Model)
+{
+    <p>@item.Id: @item.Name</p>
+}
